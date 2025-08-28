@@ -7,11 +7,11 @@ function callService(name, number) {
     const serviceName = document.getElementById(name).innerText;
     const serviceNumber = document.getElementById(number).innerText;
     const time = new Date().toLocaleTimeString();
-    Swal.fire(`Calling ${serviceName} at ${serviceNumber}`);
+    alert(`Calling ${serviceName} at ${serviceNumber}`);
 
     const callHistoryElement = document.querySelector(".history-container");
     if (!callHistoryElement)
-      return console.error("No .history-container found!");
+      return console.error("No history-container found!");
 
     const newDiv = document.createElement("div");
     newDiv.innerHTML = `
@@ -32,7 +32,6 @@ function callService(name, number) {
 
     document.getElementById("coin").innerText = coinNumber;
   } else {
-    // alert("Sorry....Not enough coins");
     Swal.fire({
       icon: "error",
       title: "Oops...",
@@ -46,8 +45,13 @@ let heartCount = 0;
 const heart = document.getElementsByClassName("heart-button");
 for (let i = 0; i < heart.length; i++) {
   heart[i].addEventListener("click", function () {
+    Swal.fire({
+      icon: "success",
+      title: "Lovely!",
+      text: "Successfully Added to Favorites",
+    });
+
     console.log("heart Clicked");
-    // document.getElementById("heart-icon").style.fill = "red";
     heartCount++;
     document.getElementById("heart").innerText = heartCount;
   });
@@ -80,4 +84,12 @@ document.getElementById("ngo").addEventListener("click", function () {
 });
 document.getElementById("travel").addEventListener("click", function () {
   callService("railway-service", "railway-number");
+});
+
+// Call history clear
+document.getElementById("clear-history").addEventListener("click", function () {
+  const historyContainer = document.querySelector(".history-container");
+  console.log(historyContainer);
+  if (!historyContainer) return console.error("No history-container found!");
+  historyContainer.innerHTML = "";
 });
