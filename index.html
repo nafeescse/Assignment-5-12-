@@ -10,6 +10,8 @@
 
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.css">
+
 </head>
 
 <body>
@@ -32,9 +34,9 @@
           <p id="coin">100</p>
           <img class="h-6" src="assets/coin.png" alt="" />
         </div>
-        <div
+        <div 
           class="count-copy rounded-4xl px-2 md:px-5 py-1 flex items-center gap-1 md:gap-3 text-white font-bold bg-[#00A63E]">
-          <p>0</p> Copy
+          <p id="copy">0</p> Copy
         </div>
       </div>
     </div>
@@ -73,8 +75,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyEmergencyBtn" data-clipboard-target="#emergency-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="all"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -98,8 +100,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyPoliceBtn" data-clipboard-target="#police-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="police"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -122,8 +124,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyFireBtn" data-clipboard-target="#fire-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="fire"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -148,8 +150,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyAmbulanceBtn" data-clipboard-target="#ambulance-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="health"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -172,8 +174,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyWomenBtn" data-clipboard-target="#women-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="help"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -196,8 +198,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyAntiBtn" data-clipboard-target="#anti-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="govt"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -221,8 +223,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyElectricityBtn" data-clipboard-target="#electricity-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="electricity"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -245,8 +247,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyBracBtn" data-clipboard-target="#brac-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="ngo"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -269,8 +271,8 @@
             </p>
           </div>
           <div class="button flex items-center justify-around gap-3 mt-auto">
-            <button
-              class="text-xs py-1 rounded-md h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
+            <button id="copyRailwayBtn" data-clipboard-target="#railway-number"
+              class="text-xs py-1 rounded-md copy-button h-xs w-1/2 text-[#5C5C5C] border-1 border-[35C5C5C] flex justify-center items-center gap-1"><i
                 class="fa-solid fa-copy"></i><span>Copy</span></button>
             <button id="travel"
               class="call-button bg-[#00A63E] text-xs py-1 rounded-md h-xs w-1/2 text-white flex justify-center items-center gap-1"><i
@@ -298,6 +300,8 @@
     </section>
 
     <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.12.0/toastify.js" integrity="sha512-ZHzbWDQKpcZxIT9l5KhcnwQTidZFzwK/c7gpUUsFvGjEsxPusdUCyFxjjpc7e/Wj7vLhfMujNx7COwOmzbn+2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 
 </html>
