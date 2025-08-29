@@ -45,6 +45,7 @@ let heartCount = 0;
 const heart = document.getElementsByClassName("heart-button");
 for (let i = 0; i < heart.length; i++) {
   heart[i].addEventListener("click", function (e) {
+    // heart.style.backgroundColor = "red";
     e.preventDefault();
     alert(`Lovely!
 Added to Favorites Successfully`);
