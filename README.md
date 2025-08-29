@@ -6,7 +6,7 @@
 
 ## 2. How do you create and insert a new element into the DOM?
 
-- First create a new element by using document.createElement() and set its value using innerHTML or innerText. Then select a parent element by using any method and finally insert the new element into the parent element by using .appendChild() method.
+- First create a new element by using document.createElement() and set its value using innerHTML or innerText. Then select a parent element by using any method and finally insert the new element into the parent element as the last child by using .appendChild() method.
 
 ## 3. What is Event Bubbling and how does it work?
 
