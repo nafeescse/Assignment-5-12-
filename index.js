@@ -8,7 +8,8 @@ function callService(name, number) {
     const serviceName = document.getElementById(name).innerText;
     const serviceNumber = document.getElementById(number).innerText;
     const time = new Date().toLocaleTimeString();
-    alert(`Calling ${serviceName} at ${serviceNumber}`);
+    alert(`📞 Calling...
+    ${serviceName} at ${serviceNumber}`);
 
     const callHistoryElement = document.querySelector(".history-container");
     if (!callHistoryElement)
