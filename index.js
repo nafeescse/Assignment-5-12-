@@ -28,17 +28,15 @@ function callService(name, number) {
            </div>
     `;
     callHistoryElement.appendChild(newDiv);
-    console.log("Appended new history:", newDiv);
+    console.log("Appended:", newDiv);
 
     coinNumber -= 20;
 
     document.getElementById("coin").innerText = coinNumber;
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Not enough coins!",
-    });
+    alert(`Opps....
+Please recharge your coins!!
+`);
   }
 }
 
@@ -48,12 +46,8 @@ const heart = document.getElementsByClassName("heart-button");
 for (let i = 0; i < heart.length; i++) {
   heart[i].addEventListener("click", function (e) {
     e.preventDefault();
-    Swal.fire({
-      icon: "success",
-      title: "Lovely!",
-      text: "Successfully Added to Favorites",
-    });
-
+    alert(`Lovely!
+Added to Favorites Successfully`);
     console.log("heart Clicked");
     heartCount++;
     document.getElementById("heart").innerText = heartCount;
@@ -109,11 +103,13 @@ document.getElementById("travel").addEventListener("click", function (e) {
 });
 
 // Call history clear
+
 document.getElementById("clear-history").addEventListener("click", function () {
   const historyContainer = document.querySelector(".history-container");
-  console.log(historyContainer);
-  if (!historyContainer) return console.error("No history-container found!");
+  // console.log(historyContainer.innerHTML);
+  if (!historyContainer.innerHTML) return alert("No call history found!");
   historyContainer.innerHTML = "";
+  alert("Call history cleared!");
 });
 
 // Copy to clipboard
@@ -124,17 +120,11 @@ function copyToClipboard(buttonId, targetId) {
   btn.addEventListener("click", () => {
     navigator.clipboard
       .writeText(hotLine.textContent)
-      .then(() =>
-        Toastify({
-          text: "Copied to Clipboard",
-          duration: 5000,
-          gravity: "bottom",
-          position: "right",
-        }).showToast()
-      )
+      .then(() => alert(`(${hotLine.innerText}) Copied to Clipboard `))
       .catch((err) => console.error("Failed to copy:", err));
   });
 }
+
 copyToClipboard("copyEmergencyBtn", "emergency-number");
 copyToClipboard("copyPoliceBtn", "police-number");
 copyToClipboard("copyFireBtn", "fire-number");
